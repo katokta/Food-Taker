@@ -7,8 +7,28 @@ include("config/db_connect.php");
   <title>Food Ordering Online Service</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="Stylesheet" href="css/style.css">
-  <link rel="Stylesheet" href="css/bootstrap.css">
+ <!--===============================================================================================-->	
+ <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="Stylesheet" href="css/style.css">
+    <link rel="Stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
 <nav class="navba">
@@ -35,40 +55,49 @@ include("config/db_connect.php");
     </ul>
 </nav>
 
-    <div class="container-fluid h-100 login-form">
-        <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Register</h5>
-                            <form class="form-signin" action="api/register_user.php" method="post">
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(image/img0.jpg);">
+                <span class="login100-form-title-1">
+						Sign Up
+					</span>
+				</div>
+                            <form class="login100-form validate-form" action="api/register_user.php" method="post">
 
-                                <div class="form-label-group">
-                                    <input type="text" name="name" id="inputName" class="form-control" placeholder="Input your Username" required autofocus>
-                                    <label for="inputUname">Username</label>
-                                </div>
+                            <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Username:</span>
+						<input class="input100" type="text" name="username" placeholder="Enter username">
+						<span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Email:</span>
+						<input class="input100" type="email" name="inputEmail" placeholder="Enter your email" required autofocus>
+						<span class="focus-input100"></span>
+                    </div>
+                    
+                        <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password:</span>
+						<input class="input100" type="password" name="pwd" id="inputPassword" placeholder="Enter password" required>
+						<span class="focus-input100"></span>
+					</div>
 
-                                <div class="form-label-group">
-                                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                                    <label for="inputEmail">Email address</label>
-                                </div>
-
-                                <div class="form-label-group">
-                                    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
-                                    <label for="inputPassword">Password</label>
-                                </div>
-
-                                <div class="form-label-group">
-                                    <input type="password" name="cpwd" id="inputPassword" class="form-control" placeholder="Confirmed Password" required>
-                                    <label for="confirmedPassword">Confirmed Password </label>
-                                </div>
+                    <div class="wrap-input100 validate-input m-b-18" data-validate = "Password confirm is required">
+						<span class="label-input100">Password Confirm:</span>
+						<input class="input100" type="password" name="cpwd" id="inputPassword" placeholder="Password confirm" required>
+						<span class="focus-input100"></span>
+					</div>
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                                 </div>
-                                <input class="btn btn-lg btn-primary btn-block text-uppercase" name="submit" type="submit" value="Register">
-                                <hr class="my-4">
-                                <h6>Already has an account? <a href="login.php">Click Here to Sign In</a></h6>
+                                
+                                <div>
+                                    <input class="btn btn-lg btn-primary btn-block text-uppercase" name="submit" type="submit" value="Register">
+                                    <hr />
+                                    <h6>Already has an account? <a href="login.php">Click Here to Sign In</a></h6>
+                                </div> 
                             </form>
                     </div>
                 </div>

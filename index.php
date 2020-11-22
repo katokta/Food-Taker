@@ -10,6 +10,10 @@ include("config/db_connect.php");
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="image/img0.jpg">
+  <link rel="Stylesheet" href="css/style.css">
+  <link rel="Stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
   <title>Mari Order Online | Bersama KAMI</title>
 </head>
 <body>
