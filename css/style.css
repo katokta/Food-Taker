@@ -1,4 +1,10 @@
 .navba{
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 3px 2px #dedede;
     text-align: right;
     width: auto;
     height: 120px;
