@@ -9,17 +9,16 @@
     width: auto;
     height: 120px;
 }
-.navbar-top{
-    padding-top: 30px;
-}
+
 .navbar-text{
     text-align: left;
     padding-right: 30px;
     
 }
 .link-nav{
-    color: black;
+  color: black;
 }
+
 .landing-page{
     width: auto;
     height: 500px;

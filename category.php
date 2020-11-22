@@ -6,6 +6,8 @@ include("config/db_connect.php");
 <head>
     <link rel="Stylesheet" href="css/style.css">
     <link rel="Stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Food Ordering Online Service</title>
 </head>
 <body>

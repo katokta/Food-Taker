@@ -58,7 +58,7 @@ include("config/db_connect.php");
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(image/login.jpg);">
+				<div class="login100-form-title" style="background-image: url(image/img0.jpg);">
                 <span class="login100-form-title-1">
 						Sign Up
 					</span>
