@@ -10,14 +10,32 @@ include("config/db_connect.php");
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="image/img0.jpg">
-  <link rel="Stylesheet" href="css/style.css">
-  <link rel="Stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+ <!--===============================================================================================-->	
+ <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="Stylesheet" href="css/style.css">
+    <link rel="Stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+<!--===============================================================================================-->
   <title>Mari Order Online | Bersama KAMI</title>
 </head>
 <body>
-<nav class="navba">
+<nav class="navba fixed-top">
       <ul class="navbar-top">
         <li class="navbar-text"><a class="link-nav" href="index.php">HOME</a></li>
         <li class="navbar-text nav-item dropdown" data-toggle="dropdown"><a class="link-nav nav-link dropdown-toggle" href="category.html">CATEGORY</a>

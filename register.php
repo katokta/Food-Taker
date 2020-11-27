@@ -31,7 +31,7 @@ include("config/db_connect.php");
 <!--===============================================================================================-->
 </head>
 <body>
-<nav class="navba">
+<nav class="navba fixed-top">
     <ul class="navbar-top">
         <li class="navbar-text"><a class="link-nav" href="index.php">HOME</a></li>
         <li class="navbar-text nav-item dropdown" data-toggle="dropdown"><a class="link-nav nav-link dropdown-toggle" href="category.html">CATEGORY</a>
