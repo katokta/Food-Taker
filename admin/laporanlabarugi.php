@@ -33,6 +33,20 @@ include("../config/db_connect.php");
       <div class="container-fluid m-0 p-0">
         <div class="row m-0 p-0">
           <div class="col-lg-12 m-0 p-2 text-center text-md-left text-lg-left">
+          <form method="POST" action="cetaklabarugi.php">
+            <h1>Cetak Laporan Laba-Rugi</h1>
+            <br>
+            <h4>Pilih Jangkauan Tanggal</h4>
+            <br>
+            <h6>Tanggal Awal</h6>
+            <input type="date" name="datestart">
+            <br>
+            <h6>Tanggal Akhir</h6>
+            <input type="date" name="dateend">
+            <br>
+            <br>
+            <input type="submit">
+          </form>
           </div>
         </div>
       </div>
