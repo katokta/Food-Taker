@@ -33,6 +33,76 @@ include("../config/db_connect.php");
       <div class="container-fluid m-0 p-0">
         <div class="row m-0 p-0">
           <div class="col-lg-12 m-0 p-2 text-center text-md-left text-lg-left">
+          <h1>Tambahkan Transaksi Outflow</h1>
+            <form method="POST" action="addstaff.php" enctype="multipart/form-data">
+                        <form>
+                        <div class="form-label-group">
+                            <div class="name">Nama Transaksi Outflow</div>
+                            <div class="value">
+                                <input class="form-control" type="text" name="namamiscinflow">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-label-group">
+                            <div class="name">Tanggal Transaksi Outflow</div>
+                            <div class="value">
+                                <input class="form-control" type="text" name="tanggalmiscinflow">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-label-group">
+                            <div class="name">Waktu Transaksi Outflow</div>
+                            <div class="value">
+                                <input class="form-control" type="text" name="waktumiscinflow">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-label-group">
+                            <div class="name">Deskripsi Transaksi Outflow</div>
+                            <div class="value">
+                            <input class="form-control" type="text" name="descmiscinflow">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-label-group">
+                            <div class="name">Akun Kredit</div>
+                            <div class="value">
+                            <input class="form-control" type="text" name="akunkreditmiscinflow">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-label-group">
+                            <div class="name">Kredit</div>
+                            <div class="value">
+                            <input class="form-control" type="text" name="creditmiscinflow">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-label-group">
+                            <div class="name">Akun Debit</div>
+                            <div class="value">
+                            <input class="form-control" type="text" name="akundebitmiscinflow">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-label-group">
+                            <div class="name">Debit</div>
+                            <div class="value">
+                            <input class="form-control" type="text" name="debitmiscinflow">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-label-group">
+                            <div class="name">Nama Staff Senior</div>
+                            <div class="value">
+                                <input class="form-control" type="text" name="staffname" readonly value=<?php echo htmlspecialchars($name[0]);?>>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card-footer" style="text-align: center;">
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Tambah</button>
+                        </div>
+                     </form>
           </div>
         </div>
       </div>
