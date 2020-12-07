@@ -25,45 +25,73 @@ include("config/db_connect.php");
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-    <link rel="Stylesheet" href="css/style.css">
+    
     <link rel="Stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
+	  <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="Stylesheet" href="css/style.css">
 <!--===============================================================================================-->
 </head>
 <body>
-<nav class="navba fixed-top">
-    <ul class="navbar-top">
-        <li class="navbar-text"><a class="link-nav" href="index.php">HOME</a></li>
-        <li class="navbar-text nav-item dropdown" data-toggle="dropdown"><a class="link-nav nav-link dropdown-toggle" href="category.html">CATEGORY</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Food</a></li>
-                <li><a class="dropdown-item" href="#">Beverages</a></li>
-                <li><a class="dropdown-item" href="#">Dessert</a></li>
-                <li><a class="dropdown-item" href="#">Discounts & Offers</a></li>
-                <li><a class="dropdown-item" href="#">Packages</a></li>
-            </ul>
+<nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+  <a class="navbar-brand" href="index.php">Restaurant Moo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbartoggler">
+    <ul class="navbar-nav ml-auto mt-2">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">HOME</a>
         </li>
-        <li class="navbar-text nav-item dropdown" data-toggle="dropdown"><a class="link-nav nav-link dropdown-toggle" href="aboutus.html">ABOUT US</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Vision & Mission</a></li>
-                <li><a class="dropdown-item" href="#">History</a></li>
-                <li><a class="dropdown-item" href="#">Structure</a></li>
-            </ul>
+        <li class="nav-item dropdown" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarCategoryMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CATEGORY
+          </a>
+            <div class="dropdown-menu" aria-labelledby="navbarCategoryMenuLink">
+                  <a class="dropdown-item" href="category.php">All Items</a>
+                  <a class="dropdown-item" href="#">Food</a>
+                  <a class="dropdown-item" href="#">Beverages</a>
+                  <a class="dropdown-item" href="#">Dessert</a>
+                  <a class="dropdown-item" href="#">Discounts & Offers</a>
+                  <a class="dropdown-item" href="#">Packages</a>
+            </div> 
         </li>
-        <li class="navbar-text"><a class="link-nav" href="cart.html">CART</a></li>
-        <li class="navbar-text"><a class="link-nav" href="login.php">SIGN IN</a></li>
+        <li class="nav-item dropdown" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAboutLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownAboutLink">
+                <a class="dropdown-item" href="#">Vision & Mission</a>
+                <a class="dropdown-item" href="#">History</a>
+                <a class="dropdown-item" href="#">Structure</a>
+            </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.php">CART</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.php">SIGN IN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.php">REGISTER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="category.php">CATEGORY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.php">ABOUT US</a>
+        </li>
     </ul>
+  </div>
 </nav>
-    <div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(image/img0.jpg);">
-					<span class="login100-form-title-1">
-						Sign In
-					</span>
-                </div>
-                
+
+<div class="limiter">
+  <div class="container-login100">
+  	<div class="wrap-login100">
+			<div class="login100-form-title" style="background-image: url(image/img0.jpg);">
+				<span class="login100-form-title-1">
+					Sign In
+				</span>
+      </div>
+               
 				<form class="login100-form validate-form" action="api/login_user.php" method="post">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
 						<span class="label-input100">Email:</span>
@@ -98,12 +126,12 @@ include("config/db_connect.php");
         </div>
     </div>
 
-<script src="js/bootstrap.bundle.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/indexscript.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
+<script src="js/bootstrap.min.js"></script>
+<script src="js/fontawesome.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/jquery.min.js"></script>
 </body>
 </html>

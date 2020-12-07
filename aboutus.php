@@ -4,101 +4,169 @@ include("config/db_connect.php");
 <!DOCTYPE html>
 <html>
 <head>
-    <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-    <link rel="Stylesheet" href="css/style.css">
-    <link rel="Stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-    <title>Food Ordering Online Service</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="image/img0.jpg">
+  <link rel="Stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="Stylesheet" href="css/style.css">
+  <title>Food Ordering Online Service</title>
 </head>
 <body>
-<nav class="navba fixed-top">
-    <ul class="navbar-top">
-        <li class="navbar-text"><a class="link-nav" href="index.php">HOME</a></li>
-        <li class="navbar-text nav-item dropdown" data-toggle="dropdown"><a class="link-nav nav-link dropdown-toggle" href="category.html">CATEGORY</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Food</a></li>
-                <li><a class="dropdown-item" href="#">Beverages</a></li>
-                <li><a class="dropdown-item" href="#">Dessert</a></li>
-                <li><a class="dropdown-item" href="#">Discounts & Offers</a></li>
-                <li><a class="dropdown-item" href="#">Packages</a></li>
-            </ul>
-        </li>
-        <li class="navbar-text nav-item dropdown" data-toggle="dropdown"><a class="link-nav nav-link dropdown-toggle" href="aboutus.html">ABOUT US</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Vision & Mission</a></li>
-                <li><a class="dropdown-item" href="#">History</a></li>
-                <li><a class="dropdown-item" href="#">Structure</a></li>
-            </ul>
-        </li>
-        <li class="navbar-text"><a class="link-nav" href="cart.html">CART</a></li>
-        <li class="navbar-text"><a class="link-nav" href="login.php">SIGN IN</a></li>
-    </ul>
-</nav>
 
-<div class="vision-mission">
+<button onclick="topfunction()" class="btn btn-outline-dark" id="btn-top" title="Go to top">Top</button>
+
+<nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+  <a class="navbar-brand" href="index.php">Restaurant Moo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbartoggler">
+    <ul class="navbar-nav ml-auto mt-2">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">HOME</a>
+        </li>
+        <li class="nav-item dropdown" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarCategoryMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CATEGORY
+          </a>
+            <div class="dropdown-menu" aria-labelledby="navbarCategoryMenuLink">
+                  <a class="dropdown-item" href="category.php">All Items</a>
+                  <a class="dropdown-item" href="#">Food</a>
+                  <a class="dropdown-item" href="#">Beverages</a>
+                  <a class="dropdown-item" href="#">Dessert</a>
+                  <a class="dropdown-item" href="#">Discounts & Offers</a>
+                  <a class="dropdown-item" href="#">Packages</a>
+            </div> 
+        </li>
+        <li class="nav-item dropdown" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAboutLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownAboutLink">
+                <a class="dropdown-item" href="#">Vision & Mission</a>
+                <a class="dropdown-item" href="#">History</a>
+                <a class="dropdown-item" href="#">Structure</a>
+            </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.php">CART</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.php">SIGN IN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.php">REGISTER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="category.php">CATEGORY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.php">ABOUT US</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid vision-mission">
     
 </div>
 
-<div class="history">
+<div class="container-fluid history">
 
 </div>
 
-<div class="structure">
+<div class="container-fluid structure">
 
 </div>
 
-<footer>
-    <div class="container">
-        <div class="w3-row">
-            <div class="w3-col m3 l1 justify-content-center" style="padding-bottom: 10px">	
-                <!--<a href="#page-top"><img src="img/elegance.png" width=50%></a>-->
-            </div>
-            <div class="w3-col m3 l3" style="padding-bottom: 10px">
-                  <p class="head">Main Studio</p>
-                  <hr style="border: 1px solid white;" width=100%>
-                  <p style="padding-top: 12px">Jl. Imam Bonjol no. 1001</p>
-                  <p>Jakarta Selatan-DKI Jakarta</p>
-                  <p>12345</p>
-            </div>
-            <div class="w3-col m3 l3" style="padding-bottom: 10px">
-                  <p class="head">Contact Us</p>
-                  <hr style="border: 1px solid white;" width=100%>
-                  <p style="padding-top: 12px"><a href="tel:12345678910">(123)-45678910</a></p>
-                  <p><a href="tel:080012345678912">080012345678912</a></p>
-                  <p><a href="mailto:info@elegance.com">info@elegance.com</a></p>
-            </div>
-            <div class="w3-col m3 l3" style="padding-bottom: 10px">
-                <p class="head">Location</p>
-                <hr style="border: 1px solid white;" width=100%>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510642.23291432054!2d103.7729184837082!3d0.837155940803044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d9bce8c054ce05%3A0x3039d80b220cbb0!2sBatam%2C%20Kota%20Batam%2C%20Kepulauan%20Riau!5e0!3m2!1sid!2sid!4v1573018171772!5m2!1sid!2sid" width="100%" height="100%" frameborder="0" style="border:0; z-index: -1; overflow: hidden; padding-top: 12px;"></iframe>
-            </div>
-        </div>
+<footer class="page-footer font-small purple pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Mari Order Online</h5>
+        <p>Ayo order dari Restoran KAMI dan dapatkan bermacam-macam promo</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Contact Us</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Instagram</a>
+          </li>
+          <li>
+            <a href="#!">Facebook</a>
+          </li>
+          <li>
+            <a href="#!">WhatsApp</a>
+          </li>
+          <li>
+            <a href="#!">Email</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
     </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">Mari Order Online</a>
+  </div>
+  <!-- Copyright -->
+
 </footer>
 
-<script src="js/bootstrap.bundle.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-3.5.1.min.js"></script>
+
+<script src="js/indexscript.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/fontawesome.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/jquery.min.js"></script>
 </body>
 </html>
