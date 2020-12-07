@@ -42,12 +42,12 @@ $msg="";
           )
           );
           if ($account["access"]=='customer'){
-         header("location:http://localhost/Food-Taker/logged-in/index.php");
+         header("location:http://localhost/Food-Taker-master(modif yulun)/logged-in/index.php");
           } else {
-            header("location:http://localhost/Food-Taker/admin/index.php");
+            header("location:http://localhost/Food-Taker-master(modif yulun)/admin/index.php");
           }
         } else{
-                header('location:http://localhost/Food-Taker/login.php');
+                header('location:http://localhost/Food-Taker-master(modif yulun)/login.php');
                 $msg="Invalid password and username";
             }
             $_SESSION["msg"]=$msg;

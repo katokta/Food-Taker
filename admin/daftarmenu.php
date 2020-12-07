@@ -23,41 +23,114 @@ include("../config/db_connect.php");
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-  <?php include('navbar.php');?>
+  <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark nosd">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <div class="nav-btn text-right w-100">
+          <button class="snavbarx float-left" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <button class="navbar-toggler snavbar float-left" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <?php $query="SELECT * FROM customer WHERE access='admin'";
+        $querycall=mysqli_query($conn, $query);
+        $account=mysqli_fetch_all($querycall, MYSQLI_ASSOC);?>  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
+          <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item avatar dropdown">
+              <a class="p-0 nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <?php if (isset($account["Customer_profpic"])){?>  
+              <img src="<?php echo htmlspecialchars($account["Customer_profpic"]);?>" class="rounded-circle border z-depth-0">
+              <?php } else{ ?>
+                <img src="../image/avatar.png" class="rounded-circle border z-depth-0">
+              <?php } ?>
+            </a>
+            <?php
+           $user=$_SESSION["user"];
+           $query = "SELECT Customer_Name FROM customer WHERE Customer_Email='".$user."'";
+           $result = mysqli_query($conn, $query);
+           $name = mysqli_fetch_array($result);
+           ?>
+              <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item waves-effect waves-light" href="#"><?php echo htmlspecialchars($name[0]);?></a>  
+              <a class="dropdown-item waves-effect waves-light" href="#">Profile</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  <!-- Sidebar navigation -->
+  <div class="side-nav nosd bg-white">
+      <ul class="custom-scrollbar">
+        <!-- Side navigation links -->
+        <li>
+          <ul class="collapsible collapsible-accordion">
+            <li class="mainmenu actives"><a class="robotor actives" href="#"><i class="fab fa-dashcube"></i> Dashboard</a>
+            </li>
+            <li class="mainmenu">
+              <a class="robotor collapsible-header waves-effect arrow-r">
+                <i class="fab fa-buffer"></i> Aksi <i class="fas fa-angle-down rotate-icon"></i>
+              </a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a class href="menu.php">Tambah Menu</a>
+                  </li>
+                  <li>
+                    <a class href="staff.php">Tambah Staff</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mainmenu">
+              <a class="robotor collapsible-header waves-effect arrow-r">
+                <i class="fab fa-buffer"></i> Laporan <i class="fas fa-angle-down rotate-icon"></i>
+              </a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a class href="#">Daftar Pelanggan</a>
+                  </li>
+                  <li>
+                    <a class href="#">Daftar Menu</a>
+                  </li>
+                  <li>
+                    <a class href="#">Menu Favorit</a>
+                  </li>
+                  <li>
+                    <a class href="#">Laporan Penjualan</a>
+                  </li>
+                  <li>
+                    <a class href="#">Laporan Keuangan/a>
+                  </li>
+                  <li>
+                    <a class href="#">Laporan Akhir Tahun</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mainmenu">
+            <a class="btn-primary" href="logout.php" role="button">Logout</a>
+            </li>   
+          </ul>
+        </li>
+        <!--/. Side navigation links -->
+      </ul>
+      <div class="sidenav-bg rgba-blue-strong1"></div>
+    </div>
     <!--/. Sidebar navigation -->
     <div id="content" class="content">
       <div class="container-fluid m-0 p-0">
         <div class="row m-0 p-0">
           <div class="col-lg-12 m-0 p-2 text-center text-md-left text-lg-left">
-          <?php
-          $querymenu="SELECT * FROM menu";
-          $menuresult=mysqli_query($conn, $querymenu);
-          $menus=mysqli_fetch_all($menuresult, MYSQLI_ASSOC);
-          ?>
-            <h1>Daftar Menu</h1>
-            <table style="width:100%">
-              <th>Menu ID</th>
-              <th>Foto Menu</th>
-              <th>Nama Menu</th>
-              <th>Kategori Menu</th>
-              <th>Harga Menu</th>
-              <th>Kuantitas Menu</th>
-              <th>Deskripsi Menu</th>
-              <th>Nama PIC</th>
-              <th>Aksi</th>
-              <?php foreach($menus as $menu){?>
-              <tr>
-                  <td><?php echo htmlspecialchars($menu["MenuID"]);?></td>
-                  <td><img src="../<?php echo htmlspecialchars($menu["Photo_Menu"]);?>"></td>
-                  <td><?php echo htmlspecialchars($menu["Nama_Menu"]);?></td>
-                  <td><?php echo htmlspecialchars($menu["Kategori_Menu"]);?></td>
-                  <td><?php echo htmlspecialchars($menu["Harga_Menu"]);?></td>
-                  <td><?php echo htmlspecialchars($menu["Kuantitas_Tersedia"]);?></td>
-                  <td><?php echo htmlspecialchars($menu["Deskripsi_Menu"]);?></td>
-                  <td><?php echo htmlspecialchars($menu["staff_name"]);?></td>
-              </tr>
-              <?php }?>
-            </table>
+            <h1>Daftar Staff</h1>
+            
           </div>
         </div>
       </div>

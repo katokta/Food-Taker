@@ -4,59 +4,67 @@ include("config/db_connect.php");
 <!DOCTYPE html>
 <html>
 <head>
-
-  <link rel="Stylesheet" href="css/bootstrap.css">
-  <link rel="Stylesheet" href="css/style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="image/img0.jpg">
- <!--===============================================================================================-->	
- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-    <link rel="Stylesheet" href="css/style.css">
-    <link rel="Stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
-<!--===============================================================================================-->
+  <link rel="Stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="Stylesheet" href="css/style.css">
   <title>Mari Order Online | Bersama KAMI</title>
 </head>
 <body>
-<nav class="navba fixed-top">
-      <ul class="navbar-top">
-        <li class="navbar-text"><a class="link-nav" href="index.php">HOME</a></li>
-        <li class="navbar-text nav-item dropdown" data-toggle="dropdown"><a class="link-nav nav-link dropdown-toggle" href="category.html">CATEGORY</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Food</a></li>
-                <li><a class="dropdown-item" href="#">Beverages</a></li>
-                <li><a class="dropdown-item" href="#">Dessert</a></li>
-                <li><a class="dropdown-item" href="#">Discounts & Offers</a></li>
-                <li><a class="dropdown-item" href="#">Packages</a></li>
-            </ul>
+
+<button onclick="topfunction()" class="btn btn-outline-dark" id="btn-top" title="Go to top">Top</button>
+
+<nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+  <a class="navbar-brand" href="index.php">Restaurant Moo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbartoggler">
+    <ul class="navbar-nav ml-auto mt-2">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">HOME</a>
         </li>
-        <li class="navbar-text nav-item dropdown" data-toggle="dropdown"><a class="link-nav nav-link dropdown-toggle" href="aboutus.html">ABOUT US</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Vision & Mission</a></li>
-                <li><a class="dropdown-item" href="#">History</a></li>
-                <li><a class="dropdown-item" href="#">Structure</a></li>
-            </ul>
+        <li class="nav-item dropdown" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarCategoryMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CATEGORY
+          </a>
+            <div class="dropdown-menu" aria-labelledby="navbarCategoryMenuLink">
+                  <a class="dropdown-item" href="category.php">All Items</a>
+                  <a class="dropdown-item" href="#">Food</a>
+                  <a class="dropdown-item" href="#">Beverages</a>
+                  <a class="dropdown-item" href="#">Dessert</a>
+                  <a class="dropdown-item" href="#">Discounts & Offers</a>
+                  <a class="dropdown-item" href="#">Packages</a>
+            </div> 
         </li>
-        <li class="navbar-text"><a class="link-nav" href="cart.html">CART</a></li>
-        <li class="navbar-text"><a class="link-nav" href="login.php">SIGN IN</a></li>
+        <li class="nav-item dropdown" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAboutLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownAboutLink">
+                <a class="dropdown-item" href="#">Vision & Mission</a>
+                <a class="dropdown-item" href="#">History</a>
+                <a class="dropdown-item" href="#">Structure</a>
+            </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.php">CART</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.php">SIGN IN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.php">REGISTER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="category.php">CATEGORY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.php">ABOUT US</a>
+        </li>
     </ul>
+  </div>
 </nav>
 
 <div class="landing-page">
@@ -115,15 +123,16 @@ include("config/db_connect.php");
     </div>
     
 </div>
-
 </div>
 
+
 <div class="recommended">
+<div class="rec-color">
 <div class="col-lg-12 text-center">
   <br>
-          <h1 class="section-heading text-uppercase" style="padding-bottom:0px">Our Recommended</h1>
-          <br>
-				</div>
+   <h1 class="section-heading text-uppercase" style="padding-bottom:0px">Our Recommended</h1>
+    <br>
+  </div>
 <div class="row">
 <?php foreach($menus as $menu){ ?>  
             <div class="col-sm-4">
@@ -139,8 +148,9 @@ include("config/db_connect.php");
             </div>
             <?php } ?>
 </div>
-
-<footer class="page-footer font-small purple pt-4">
+</div>
+</div>
+<footer class="page-footer font-small purple">
 
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">
@@ -221,7 +231,7 @@ include("config/db_connect.php");
   <!-- Copyright -->
 
 </footer>
-
+<script src="js/indexscript.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>
