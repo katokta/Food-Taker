@@ -19,7 +19,7 @@ include("eventCart.php");
 
 <button onclick="topfunction()" class="btn btn-outline-dark" id="btn-top" title="Go to top">Top</button>
 
-<nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top">
   <a class="navbar-brand" href="index.php">Restaurant Moo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,11 +29,11 @@ include("eventCart.php");
         <li class="nav-item">
           <a class="nav-link" href="index.php">HOME</a>
         </li>
-        <li class="nav-item dropdown" data-toggle="dropdown">
+        <li class="nav-item dropdown" aria-labelledby="navbarCategoryMenuLink">
           <a class="nav-link dropdown-toggle" href="#" id="navbarCategoryMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             CATEGORY
           </a>
-            <div class="dropdown-menu" aria-labelledby="navbarCategoryMenuLink">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarCategoryMenuLink">
                   <a class="dropdown-item" href="category.php">All Items</a>
                   <a class="dropdown-item" href="#">Food</a>
                   <a class="dropdown-item" href="#">Beverages</a>
@@ -42,16 +42,16 @@ include("eventCart.php");
                   <a class="dropdown-item" href="#">Packages</a>
             </div> 
         </li>
-        <li class="nav-item dropdown" data-toggle="dropdown">
+        <li class="nav-item dropdown" aria-labelledby="navbarDropdownAboutLink">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAboutLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownAboutLink">
-                <a class="dropdown-item" href="#">Vision & Mission</a>
-                <a class="dropdown-item" href="#">History</a>
-                <a class="dropdown-item" href="#">Structure</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownAboutLink">
+                <a class="dropdown-item" href="aboutus.php">Vision & Mission</a>
+                <a class="dropdown-item" href="aboutus.php">History</a>
+                <a class="dropdown-item" href="aboutus.php">Structure</a>
             </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cart.php">CART</a>
+          <a class="nav-link" data-toggle="modal" data-target="#mustLogin" href="#">CART</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login.php">SIGN IN</a>
@@ -59,80 +59,19 @@ include("eventCart.php");
         <li class="nav-item">
           <a class="nav-link" href="register.php">REGISTER</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="category.php">CATEGORY</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="aboutus.php">ABOUT US</a>
-        </li>
     </ul>
   </div>
 </nav>
-  <div class="container-fluid menu" id="shopping-cart">
-    <div class="txt-heading">Order List</div>
-    <a id="btnEmpty" href="category.php?action=empty">Empty Cart</a>
-        
-    <?php
-    if(isset($_SESSION["cart_item"])){
-      $total_quantity = 0;
-      $total_price = 0;
-    ?>
-    <div class = "container-fluid">
-     <table class="tbl-cart" cellpadding="10" cellspacing="1">
-      <tbody class="container">
-      <tr>
-        <th style="text-align:left;">Name</th>
-        <th style="text-align:left;">Code</th>
-        <th style="text-align:right;" width="5%">Quantity</th>
-        <th style="text-align:right;" width="10%">Unit Price</th>
-        <th style="text-align:right;" width="10%">Price</th>
-        <th style="text-align:center;" width="5%">Remove</th>
-      </tr>	
-         <?php		
-             foreach ($_SESSION["cart_item"] as $item){
-               $item_price = $item["quantity"]*$item["price"];
-         ?>
-          <tr>
-          <td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
-          <td><?php echo $item["code"]; ?></td>
-          <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
-          <td  style="text-align:right;"><?php echo "Rp ".$item["price"]; ?></td>
-          <td  style="text-align:right;"><?php echo "Rp ". number_format($item_price,2); ?></td>
-          <td style="text-align:center;"><a href="category.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
-          </tr>
-          <?php
-            $total_quantity += $item["quantity"];
-            $total_price += ($item["price"]*$item["quantity"]);
-          }
-          ?>
-          <tr>
-          <td colspan="2" align="right">Total:</td>
-          <td align="right"><?php echo $total_quantity; ?></td>
-          <td align="right" colspan="2"><strong><?php echo "Rp ".number_format($total_price, 2); ?></strong></td>
-          <td></td>
-          </tr>
-          </tbody>
-      </table>	
-    </div>
-    <a class="btn btn-primary buybtn" role="button" href="cart.php">Buy</a>
-      <?php
-    } else {
-    ?>
-    <div class="no-records">Your Cart is Empty</div>
-    <?php 
-    }
-    ?>
-    </div>
-   
-    <div class="container-fluid" id="product-grid">
-        <h1 class="text-center">Menu </h1>
-        <div id="cont-ctgr-btn">
-          <button class="btn btn-dark selected mr-md-3" onclick="filterSelection('all')"> All </button>
-          <button class="btn btn-dark mr-md-3" onclick="filterSelection('food')"> Food </button>
-          <button class="btn btn-dark mr-md-3" onclick="filterSelection('beverages')"> Beverages </button>
-          <button class="btn btn-dark mr-md-3" onclick="filterSelection('dessert')"> Dessert </button>
-          <button class="btn btn-dark mr-md-3" onclick="filterSelection('discount')"> Discount & Offer </button>
-          <button class="btn btn-dark mr-md-3" onclick="filterSelection('package')"> Package </button>
+
+<div class="container-fluid" id="product-grid">
+  <h1 class="text-center">Menu </h1>
+  <div id="cont-ctgr-btn">
+  <button class="btn btn-dark selected mr-md-3" onclick="filterSelection('all')"> All </button>
+  <button class="btn btn-dark mr-md-3" onclick="filterSelection('food')"> Food </button>
+  <button class="btn btn-dark mr-md-3" onclick="filterSelection('beverages')"> Beverages </button>
+  <button class="btn btn-dark mr-md-3" onclick="filterSelection('dessert')"> Dessert </button>
+  <button class="btn btn-dark mr-md-3" onclick="filterSelection('discount')"> Discount & Offer </button>
+  <button class="btn btn-dark mr-md-3" onclick="filterSelection('package')"> Package </button>
         </div>
       <?php
       $product_array = $db_handle->runQuery("SELECT * FROM MENU ORDER BY id ASC");
@@ -145,8 +84,13 @@ include("eventCart.php");
           <div class="product-tile-footer">
           <div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
           <div class="product-price"><?php echo "Rp ".$product_array[$key]["price"]; ?></div>
-          <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+          <div class="cart-action">
+            <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+            <button type="button" class="btnAddAction" data-toggle="modal" data-target="#mustLogin">
+              Add to Cart
+            </button>
           </div>
+        </div>
           </form>
         </div>
       <?php
@@ -155,7 +99,30 @@ include("eventCart.php");
       ?>
     </div>
   </div>
-  <footer class="page-footer font-small purple pt-4">
+
+<!-- Modal -->
+  <div class="modal fade" id="mustLogin" tabindex="-1" role="dialog" aria-labelledby="mustLoginModalCenterTitle" aria-hidden="true"> 
+    <div class="modal-dialog modal-dialog-centered" role="document"> 
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-dark" id="mustLoginLongTitle">Alert</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You have to login, in order to do this action.</p>
+          </div>
+          <div class="modal-footer">
+           <a role="button" class="btn btn-primary float-left d-inline-block" href="login.php">Log In</a>
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+    </div>
+  </div>
+<!-- End of Modal -->
+
+<footer class="page-footer font-small purple pt-4">
 
 <!-- Footer Links -->
 <div class="container-fluid text-center text-md-left">

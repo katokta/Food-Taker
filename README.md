@@ -1,7 +1,5 @@
 # Food-Taker
  Project Pem Web
-
-
 Hal yang aku ganti
 
 1. About Page sudah selesai tinggal final design dan isi about us
