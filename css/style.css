@@ -22,6 +22,7 @@
   height: auto;
   background-color: black;
   overflow: hidden;
+  margin-top: 80.8px;
 }
 
 .offering{
@@ -32,8 +33,16 @@
 
 .history{
   width: auto;
-  height: 650px;
+  height: 600px;
   background-color: darkred;
+}
+
+.cont-history{
+  padding: 50px;
+  float: left;
+  margin: 150px 0px 150px 75px;
+  background-color: rgb(75,95,25,0.9);
+  max-width: 600px;
 }
 
 .recommended{
@@ -222,18 +231,17 @@ footer{
   }
 
 .navbar{
-    text-align: right;
-    width: auto;
-    height: auto;
-    background-color: rgba(25,25,125,1);
-    padding-bottom: 25px;
-    color: black;
+  text-align: right;
+  width: auto;
+  height: auto;
+  background-color: rgba(25,25,125,1);
+  padding-bottom: 25px;
+  color: black;
 }
 
 /* Shopping Cart CSS Has to BE MOdify Later */
 #shopping-cart {
-	margin: 40px;
-	width: auto;
+  width: 450px;
 }
 
 #product-grid {
@@ -242,6 +250,7 @@ footer{
   max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 40px;
+  margin-top: 120px;
 }
 
 #shopping-cart table {
@@ -267,7 +276,7 @@ footer{
 	float: right;
 	text-decoration: none;
 	border-radius: 3px;
-	margin: 10px 0px;
+	margin: 10px 25px 10px 0px;
 }
 
 .btnAddAction {
@@ -373,9 +382,8 @@ footer{
     height: auto;
 }
 .buybtn{
-    margin-top: 20px;
     margin-right: 20px;
-    float: right;
+    margin-bottom: 5px;
 }
 
 .col-sm-4{
@@ -412,4 +420,104 @@ footer{
   #cont-ctgr-btn button{
     margin-bottom: 7px;
   }
+}
+
+.vision-mission{
+  background-image: url(../image/visi-mission-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.cont-visi-mission{
+  background-color: rgba(125,55,30,0.9);
+  float: right;
+  max-width: 600px;
+  margin: 150px 75px 150px 0;
+  padding: 50px;
+}
+.cont-visi-mission p,.cont-history p{
+  color: lightgrey;
+}
+
+.cont-visi-mission h2,.cont-history h2{
+  color: white;
+}
+.structure{
+  background-color: rgb(25,25,125);
+  height: 600px;
+  
+}
+
+.cont-structure{
+  width: fit-content;
+  background-color: rgba(150,55,55,0.9);
+  padding: 50px;
+  margin: 0px 50px auto;
+  position: relative;
+  top: 50%;
+}
+
+#cart-page{
+  margin: 0 auto;
+  margin-top: 90.8px;
+  min-height: 750px;
+}
+
+.cart-item{
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 30px;
+}
+
+.menu-img{
+  padding: 0px;
+  display: inline;
+  float: left;
+}
+
+.cart-img-menu{
+  height: 150px;
+}
+
+.item-information{
+  display: inline-block;
+  margin-top: 35px;
+}
+.add-delete-item{
+  display: inline;
+  float: right;
+  margin-top: 100px;
+}
+
+.item-information p{
+  font-size: 20px;
+  color: black;
+}
+
+.add-delete-item a{
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+.total-price{
+  overflow : auto;
+  height: auto;
+}
+
+.total-price p {
+  color: black;
+  font-size: 18px;
+}
+
+#payment-form{
+  margin-top: 250px;
+}
+
+.auto-height{
+  height:auto !important;
 }

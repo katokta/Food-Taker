@@ -8,49 +8,57 @@ include_once 'libs/src/JWT.php';
 use \Firebase\JWT\JWT;
 
 if (isset($_POST['submit'])){
-    require_once("../config/db_connect.php");
-$user=$_POST['email'];
-$pass=$_POST['pwd'];
-$user=mysqli_real_escape_string($conn,$user);
-$pass=mysqli_real_escape_string($conn,$pass);
+  
+  require_once("../config/db_connect.php");
+  $user=$_POST['email'];
+  $pass=$_POST['pwd'];
+  $user=mysqli_real_escape_string($conn,$user);
+  $pass=mysqli_real_escape_string($conn,$pass);
+  $query="SELECT Customer_Email, Customer_Pass, access FROM customer WHERE Customer_Email='".$user."'";
+  $result=mysqli_query($conn, $query);
+  list($cust_email, $cust_pass, $account) = mysqli_fetch_array($result);
+  $msg="";
+      if (password_verify($pass, $cust_pass)){
+          $_SESSION["user"]=$user;
+          $_SESSION["pass"]=$hashbiscuit;
 
-$query="SELECT Customer_Email, Customer_Pass, access FROM customer WHERE Customer_Email='".$user."'";
-$result=mysqli_query($conn, $query);
-list($cust_email, $cust_pass) = mysqli_fetch_array($result);
-$msg="";
-    if (password_verify($pass, $cust_pass)){
-        $_SESSION["user"]=$user;
-        $_SESSION["pass"]=$hashbiscuit;
-                
-        $token = array(
-        "iat" => $issued_at,
-        "exp" => $expiration_time,
-        "iss" => $issuer,
-        "data" => array(
-        "email" => $user->email
-        )
-        );
-         // set response code
-         http_response_code(200);
-   
-         // generate jwt
-         $jwt = JWT::encode($token, $key);
-         echo json_encode(
-         array(
-         "message" => "Successful login.",
-         "jwt" => $jwt
+          $token = array(
+          "iat" => $issued_at,
+            "exp" => $expiration_time,
+          "iss" => $issuer,
+          "data" => array(
+          "email" => $user->email
           )
-          );
-          if ($account["access"]=='customer'){
-         header("location:http://localhost/Food-Taker-master(modif yulun)/logged-in/index.php");
-          } else {
-            header("location:http://localhost/Food-Taker-master(modif yulun)/admin/index.php");
-          }
-        } else{
-                header('location:http://localhost/Food-Taker-master(modif yulun)/login.php');
-                $msg="Invalid password and username";
+            );
+           // set response code
+           http_response_code(200);
+            
+           // generate jwt
+           $jwt = JWT::encode($token, $key);
+           echo json_encode(
+           array(
+           "message" => "Successful login.",
+           "jwt" => $jwt
+            )
+            );
+            if ($account=='customer'){
+              $querycustomerdata = "SELECT Customer_Name, Customer_ID FROM Customer Where Customer_Email='".$user."'";
+              $resultcustomerdata = mysqli_query($conn, $querycustomerdata);
+              list($cust_username, $cust_id) = mysqli_fetch_array($resultcustomerdata);
+              $_SESSION["username"]= $cust_username;
+              $_SESSION["id"]= $cust_id;
+              header("location:http://localhost/Food-Taker-master(modif yulun)/logged-in/index.php");
+            } 
+            else{
+              header("location:http://localhost/Food-Taker-master(modif yulun)/admin/index.php");
             }
-            $_SESSION["msg"]=$msg;
-            echo $msg;
-        }
+          } 
+      else{
+           header('location:http://localhost/Food-Taker-master(modif yulun)/login.php?status=Invalid password and username');
+           $msg="Invalid password and username";
+          }
+    $_SESSION["msg"]=$msg;
+    echo $msg;
+}
+
 ?>

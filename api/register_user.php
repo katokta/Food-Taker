@@ -1,8 +1,8 @@
 <?php
 if(isset($_POST['submit'])){
     require_once("../config/db_connect.php");
-    $CustName=$_POST['name'];
-    $CustEmail=$_POST['email'];
+    $CustName=$_POST['username'];
+    $CustEmail=$_POST['inputEmail'];
     $CustPwd=$_POST['pwd'];
     $pass=password_hash($CustPwd, PASSWORD_DEFAULT);
     $message = "";
@@ -19,8 +19,9 @@ if(isset($_POST['submit'])){
     } else{
         // Return Success - Valid Email
         $result=mysqli_query($conn, "INSERT INTO customer VALUES (null, '".$CustName."','".$CustEmail."', null, null, null, '".$pass."', null, 'customer')");
+        header("location:../login.php");
     }
 }
-header("location:../login.php");
+
 exit();
 ?>
